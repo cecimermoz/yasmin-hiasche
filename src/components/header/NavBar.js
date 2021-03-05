@@ -59,7 +59,7 @@ const NavBar = (props) => {
   // --------------------------- End of Proptypes
 
   return (
-    <React.Fragment>
+    <header>
       <CssBaseline />
       <AppBar>
         <ToolbarStyled>
@@ -76,7 +76,7 @@ const NavBar = (props) => {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-    </React.Fragment>
+    </header>
   );
 }
 
