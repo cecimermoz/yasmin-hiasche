@@ -3,26 +3,34 @@ import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Fab from '@material-ui/core/Fab';
 import { makeStyles } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Zoom from '@material-ui/core/Zoom';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ToolbarStyled from "../styled-components/header/ToolbarStyled";
 import Logo from './Logo';
+import MenuHidden from './MenuHidden';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  bottomButton: {
     position: 'fixed',
     bottom: theme.spacing(2),
     right: theme.spacing(2),
+  },
+  containerWithoutPad: {
+    padding: '0 !important',
+  },
+  adjustFlexBasis:{
+    flexBasis:"100%",
+    padding:0,
+    lineHeight: 0,
   }
 }));
 
 const NavBar = (props) => {
   const classes = useStyles();
-  const { children, window } = props;
+  const { children, window, sections } = props;
   const ScrollTop = (props) => {
     const trigger = useScrollTrigger({
       target: window ? window() : undefined,
@@ -40,8 +48,10 @@ const NavBar = (props) => {
 
     return (
       <Zoom in={trigger}>
-        <div onClick={handleClick} role="presentation" className={classes.root}>
-          {children}
+        <div onClick={handleClick} role="presentation" className={classes.bottomButton}>
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
         </div>
       </Zoom>
     );
@@ -59,16 +69,20 @@ const NavBar = (props) => {
   // --------------------------- End of Proptypes
 
   return (
-    <header>
-      <CssBaseline />
-      <AppBar>
-        <ToolbarStyled>
-          <Logo />
-          <MenuIcon />
-        </ToolbarStyled>
-      </AppBar>
-      <ToolbarStyled id="back-to-top-anchor" />
-      <Container>
+    <React.Fragment>
+      <header>
+        <CssBaseline />
+        <AppBar>
+          <Toolbar>
+            <Container className={classes.adjustFlexBasis}>
+              <Logo/>
+            </Container>
+            <MenuHidden sections={sections}/>
+          </Toolbar>
+        </AppBar>
+        <Toolbar id="back-to-top-anchor" />
+      </header>
+      <Container className={classes.containerWithoutPad}>
         {children}
       </Container>
       <ScrollTop {...props}>
@@ -76,7 +90,8 @@ const NavBar = (props) => {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-    </header>
+    </React.Fragment>
+
   );
 }
 
