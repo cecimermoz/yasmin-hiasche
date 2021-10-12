@@ -1,10 +1,17 @@
+import { makeStyles } from '@material-ui/core';
 import logo from "../../assets/img/Estudio de DanzasYasmin Hiasche-1.png";
-import LogoStyled from '../styled-components/header/logo-style';
+
+const useStyles = makeStyles(() => ({
+    logo: {
+        width: '155px'
+    }
+}));
 
 const Logo = () => {
+    const classes = useStyles();
 
     return(
-        <LogoStyled src={logo} title={"Estudio de Danzas Yasmin Hiasche"} alt={"Estudio de Danzas Yasmin Hiasche"} />
+        <img src={logo} className={classes.logo} title={"Estudio de Danzas Yasmin Hiasche"} alt={"Estudio de Danzas Yasmin Hiasche"} />
     );
 
 }

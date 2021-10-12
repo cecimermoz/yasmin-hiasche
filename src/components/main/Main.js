@@ -1,24 +1,42 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Section from './Section';
+import { SwitchSections } from './SwitchSections';
+import Title from './Title';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     main: {
-        background: 'linear-gradient(180deg, rgba(76, 31, 110, 1) 0%, rgba(141,13,152,1) 100%)',
-        padding: '0 16px',
-        color: '#FFEAF1',
+        padding: theme.spacing(4),
+        paddingBottom: 0,
+        color: theme.palette.secondary.main,
+        textAlign: 'center',
+        maxWidth: '1200px',
+        margin: 'auto',
     },
-});
+    subtitle:{
+        marginBottom: theme.spacing(2),
+    },
+    mb: {
+        margin: 'auto',
+        marginBottom: theme.spacing(5),
+        maxWidth: theme.breaks[8],
+    }
+}));
 
-const Main = ({sections}) => {
-    const classes = useStyles();
+const Main = (props) => {
+    const { sectionsInfo } = props;
+    const { main, subtitle, mb } = useStyles();
+    
     return(
-        <main className={classes.main}>
-            { 
-                sections.map((sec,i) => (
-                    <Section title={sec.title} text={sec.content.text} key={i + sec.title}/>
-                )) 
-            }
-        </main>
+        <main className={main}>
+            {sectionsInfo.map((sec, i)=>{
+                const idTitle = sec.title.replace(/ /g,'-');
+                return (
+                    <section id={idTitle} key={i} className={mb}>
+                        <Title title={sec.title} className={subtitle}/>
+                        <SwitchSections sectionData={sec}/>
+                    </section>
+                )
+            })}
+        </main>        
     )
 }
 
