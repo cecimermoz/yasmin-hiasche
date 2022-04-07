@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { breaks } from '../../themes/generalTheme';
 import React, { useEffect } from 'react';
+import { breaks } from '../../themes/generalTheme';
 
 const useStyles = makeStyles((theme) => ({
     modalOverlay: {
@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
         height: '40px', 
         width: '40px',
         textAlign: 'center',
+        border: 'none',
+        paddingBottom: '10px',
+        cursor: 'pointer'
+        
     },
     modalBodyClose: {
         right: 0, 
@@ -77,7 +81,7 @@ const GalleryModal = (props) => {
         (e.keyCode === 37 && hasPrev) && findPrev(e);
         (e.keyCode === 39 && hasNext) && findNext(e);
     }
-
+    console.log(props)
     useEffect(() => {
         document.body.addEventListener('keydown', handleKeyDown);
         return () => document.body.removeEventListener('keydown', handleKeyDown);
@@ -88,16 +92,16 @@ const GalleryModal = (props) => {
             <div className={modalOverlay} onClick={closeModal}></div>
             <div className={modal}>
             <div className={modalBody}>
-                <a href='#'
+                <button href='#'
                     className={`${modalBodyA} ${modalBodyClose}`}
                     onClick={(e)=> closeModal(e)}
                     onKeyDown={handleKeyDown}
                 >
                     &times;
-                </a>
-                {hasPrev && <a href='#' className={`${modalBodyA} ${modalBodyBoth} ${modalBodyPrev}`} onClick={(e)=>findPrev(e)} onKeyDown={()=>handleKeyDown}>&lsaquo;</a>}
-                {hasNext && <a href='#' className={`${modalBodyA} ${modalBodyBoth}`} onClick={(e)=> findNext(e)} onKeyDown={()=>handleKeyDown}>&rsaquo;</a>}
-                <img src={src} />
+                </button>
+                {hasPrev && <button className={`${modalBodyA} ${modalBodyBoth} ${modalBodyPrev}`} onClick={(e)=>findPrev(e)} onKeyDown={()=>handleKeyDown}>&lsaquo;</button>}
+                {hasNext && <button className={`${modalBodyA} ${modalBodyBoth}`} onClick={(e)=> findNext(e)} onKeyDown={()=>handleKeyDown}>&rsaquo;</button>}
+                <img src={src} alt='imagen de la galeria' />
             </div>
             </div>
         </div>

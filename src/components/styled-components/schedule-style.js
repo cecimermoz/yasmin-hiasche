@@ -1,14 +1,9 @@
 import styled from 'styled-components';
-import {palette, spacing, breakpoints} from '../themes/generalTheme';
+import {palette, spacing } from '../themes/generalTheme';
 
 const AllDaysWrapper = styled.div`
     display: flex;
-    flex-direction: column;
-    @media(max-width: ${breakpoints.values.sm}px){
-        /* background: black; */
-    }
-
-   
+    flex-direction: column;   
 `;
 const RowWrapper = styled.div`
     display: flex;

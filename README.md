@@ -10,3 +10,6 @@ For a little view, please visit the gitlab page -> https://cecimermoz.gitlab.io/
 
 * Change of languages
 * Video preview while loading the content 
+* `useContext` to provide all data
+* Improve whole architecture on the project
+* Update styling files

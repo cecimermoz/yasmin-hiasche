@@ -1,9 +1,8 @@
 
-import { Button, FormHelperText, Input, InputLabel } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import {palette, spacing, breakpoints} from '../themes/generalTheme';
-import { FormControl } from '@material-ui/core';
+import { palette, spacing } from '../themes/generalTheme';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -31,7 +30,6 @@ const useStyles = makeStyles(() => ({
 
 const SectionContact = ({sectionData, className}) => {
     const classes = useStyles();
-    console.log('Contactooos', sectionData)
 
     const sendMail = async e => {
       e.preventDefault();

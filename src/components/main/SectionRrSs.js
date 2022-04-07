@@ -62,7 +62,7 @@ const SectionRrSs = ({sectionData}) => {
     
     return(
       <div className={iconWrapper}>
-        <a href={sectionData.facebook} target='_blank' className={icon}>
+        <a href={sectionData.facebook} rel='noreferrer' target='_blank' className={icon}>
           <FacebookIcon 
           color="secondary" 
           style={{ fontSize: 30 }}
@@ -71,7 +71,7 @@ const SectionRrSs = ({sectionData}) => {
           />
           <span className={span}>Facebook</span>
         </a>
-        <a href={sectionData.instagram} target='_blank' className={icon}>
+        <a href={sectionData.instagram} rel='noreferrer' target='_blank' className={icon}>
           <InstagramIcon 
             color="secondary" 
             style={{ fontSize: 30 }}
@@ -80,7 +80,7 @@ const SectionRrSs = ({sectionData}) => {
           />
           <span className={span}>Instagram</span>
         </a>
-        <a href={`mailto:${sectionData.mail}?subject=Consulta%20de%20la%20Web`} target='_blank' className={icon}>
+        <a href={`mailto:${sectionData.mail}?subject=Consulta%20de%20la%20Web`} target='_blank' rel='noreferrer' className={icon}>
           <MailOutlineIcon 
             color="secondary" 
             style={{ fontSize: 30 }}
@@ -89,7 +89,7 @@ const SectionRrSs = ({sectionData}) => {
           />
           <span className={span}>Enviar mail</span>
         </a>
-        <a href={`https://api.whatsapp.com/send?phone=${sectionData.whatsapp}&text=Hola,%20¿Me%20pasarías%20información%20de%20las%20clases?`} target='_blank' className={icon}>
+        <a href={`https://api.whatsapp.com/send?phone=${sectionData.whatsapp}&text=Hola,%20¿Me%20pasarías%20información%20de%20las%20clases?`} target='_blank' rel='noreferrer' className={icon}>
           <WhatsAppIcon 
             color="secondary" 
             style={{ fontSize: 30 }}

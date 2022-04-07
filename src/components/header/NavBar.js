@@ -1,20 +1,17 @@
+import { BottomNavigation } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Fab from '@material-ui/core/Fab';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Zoom from '@material-ui/core/Zoom';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import PropTypes from 'prop-types';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
+import NavLink from '../styled-components/logo-style';
+import { palette, spacing } from '../themes/generalTheme';
 import Logo from './Logo';
 import MenuHidden from './MenuHidden';
-import { palette, spacing } from '../themes/generalTheme';
-import { BottomNavigation } from '@material-ui/core';
-import NavLink from '../styled-components/logo-style';
+
 
 const useStyles = makeStyles(() => ({
   header: {
@@ -22,10 +19,17 @@ const useStyles = makeStyles(() => ({
       zIndex: 100
     }
   },
-  bottomButton: {
-    position: 'fixed',
+  buttons:{
+  },
+  toTopButton: {
     bottom: spacing(2),
     right: spacing(2),
+    position: 'fixed',
+  },
+  whatsappButton:{
+    bottom: spacing(2),
+    right: spacing(2),
+    position: 'fixed',
   },
   containerWithoutPad: {
     padding: '0 !important',
@@ -66,44 +70,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 const NavBar = (props) => {
-  const { header, bottomButton, containerWithoutPad, adjustFlexBasis, menuButton, title, toolbarSpaceBet, navWrapper, navLink, navLinkSpan, flex0 } = useStyles()
-  const { children, window, sections, windowSize } = props;
-  const ScrollTop = (props) => {
-    const trigger = useScrollTrigger({
-      target: window ? window() : undefined,
-      disableHysteresis: true,
-      threshold: 100,
-    });
+  const { header, containerWithoutPad, toolbarSpaceBet, navWrapper, flex0, whatsappButton } = useStyles()
+  const { children, sections, windowSize } = props;
+  const number = sections?.filter( s => s.title === 'contacto')
+  const goToWhatsapp = `https://api.whatsapp.com/send?phone=${number[0].whatsapp}&text=Hola,%20¿Me%20pasarías%20información%20de%20las%20clases?`;
 
-    const handleClick = (event) => {
-      const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
-
-      if (anchor) {
-        anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    };
-
-    return (
-      <Zoom in={trigger}>
-        <div onClick={handleClick} role="presentation" className={bottomButton}>
-          <Fab color="secondary" size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </div>
-      </Zoom>
-    );
-  }
-  // Proptypes ----------------------------------
-  ScrollTop.propTypes = {
-    children: PropTypes.element.isRequired,
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
-  };
-  // --------------------------- End of Proptypes
- 
   const handleClick = (event, id) => {
     const idFormat = id.replace(/ /g,'-');
     const anchor = (event.target.ownerDocument || document).querySelector(`#${idFormat}`);
@@ -118,11 +89,9 @@ const NavBar = (props) => {
         <CssBaseline />
         <AppBar>
         <Toolbar className={toolbarSpaceBet}>
-          { windowSize < 1100 ?
+          { windowSize < 1125 ?
             <>
-              <IconButton edge="start" className={menuButton} color="inherit" aria-label="menu">
-                <MenuHidden sections={sections}/>
-              </IconButton>
+              <MenuHidden sections={sections}/>
               <Logo/>
             </>
             :
@@ -143,11 +112,12 @@ const NavBar = (props) => {
       <Container className={containerWithoutPad}>
         {children}
       </Container>
-      <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
+
+      <a href={goToWhatsapp} target='_blank' rel='noreferrer' role="presentation" className={whatsappButton}>
+        <Fab color="primary" size="medium" aria-label="contact by whatsapp">
+          <WhatsAppIcon />
         </Fab>
-      </ScrollTop>
+      </a>
     </React.Fragment>
 
   );

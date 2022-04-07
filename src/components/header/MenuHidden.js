@@ -6,14 +6,11 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { ContactlessTwoTone } from '@material-ui/icons';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
-import {breaks} from '../themes/generalTheme';
-import clsx from 'clsx';
 import React, { useState } from 'react';
-import fotoFondo from '../../assets/img/menu_hidden.jpg';
+import { breaks } from '../themes/generalTheme';
 
 const drawerWidth = '100%';
 
@@ -38,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-  hide: {
-    display: 'none',
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -53,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
   },
@@ -72,9 +65,6 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     marginRight: 0,
-  },
-  menu: {
-    flexBasis: '100%',
   },
   menuUl:{
     display: 'flex',
@@ -142,12 +132,11 @@ const MenuHidden = ({sections}) => {
 
     return(
       <>
-        <IconButton
+        <IconButton 
             color="inherit"
             aria-label="open drawer"
-            edge="end"
+            edge="start" 
             onClick={handleDrawerOpen}
-            className={[clsx(open && classes.hide), classes.menu]}
         >
             <MenuIcon />
         </IconButton>
@@ -171,13 +160,11 @@ const MenuHidden = ({sections}) => {
             
             <List className={classes.menuUl}>
               { sections.map((obj, index) => (
-                <>
-                  <ListItem button key={index}>
-                      <Button onClick={ e => handleClick(e, obj.title) } variant="contained" className={classes.menuButton}>
-                        <ListItemText primary={obj.title} />
-                      </Button>
-                  </ListItem>
-                </>
+                <ListItem key={index}>
+                    <Button onClick={ e => handleClick(e, obj.title) } variant="contained" className={classes.menuButton}>
+                      <ListItemText primary={obj.title} />
+                    </Button>
+                </ListItem>
                 )) 
               }
             </List>

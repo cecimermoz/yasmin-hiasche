@@ -1,7 +1,6 @@
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
-import { breaks, spacing } from '../../themes/generalTheme';
 import GalleryModal from './GaleryModal';
 
 const useStyles = makeStyles((theme) => ({
@@ -63,16 +62,16 @@ const ImageGaleryContent = (props) => {
         setIsModalOpen(true);
     };
     const closeModal = (e) => {
-        e != undefined && e.preventDefault();
+        e !== undefined && e.preventDefault();
         setCurrentIndex(0);
         setIsModalOpen(false);
     }
     const findPrev = (e) => {
-        e != undefined && e.preventDefault();
+        e !== undefined && e.preventDefault();
         setCurrentIndex(currentIndex - 1)
     }
     const findNext = (e) => {
-        e != undefined && e.preventDefault();
+        e !== undefined && e.preventDefault();
         setCurrentIndex(currentIndex + 1)
     }
 
@@ -81,7 +80,7 @@ const ImageGaleryContent = (props) => {
         <>
             <div className={`${clipPath} triangle-${index}`} >
                 <Typography variant="h2" className={titlePic} onClick={(e) => openModal()}>{name}</Typography>
-                <img src={previewPic} className={triangularPic} onClick={(e) => openModal()}/>
+                <img src={previewPic} alt={`abrir sección de "${name}" desde la galería`} className={triangularPic} onClick={(e) => openModal()}/>
             </div>
             {isModalOpen && 
                 

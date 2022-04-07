@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import { breaks } from '../../themes/generalTheme';
 import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 import ImageGaleryContent from './ImageGaleryContent';
 
 const useStyles = makeStyles((theme) => ({

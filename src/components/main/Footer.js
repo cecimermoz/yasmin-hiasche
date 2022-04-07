@@ -27,7 +27,7 @@ const Footer = () => {
     return (
         <footer>
             <Typography variant="body1" className={footerText}>
-                Desarrollado por <a href='https://www.linkedin.com/in/ceciliamermoz/' target='_blank'>Cecilia Mermoz</a>
+                Desarrollado por <a rel="noreferrer" href='https://www.linkedin.com/in/ceciliamermoz/' target='_blank'>Cecilia Mermoz</a>
             </Typography>
         </footer>
     );
