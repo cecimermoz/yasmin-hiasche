@@ -1,13 +1,15 @@
-import React, { useContext, useEffect } from 'react'
-import Background from '../../components/background/Background'
-import NavBar from '../../components/header/NavBar'
-import Footer from '../../components/main/Footer'
-import Main from '../../components/main/Main'
-import Skeleton from '../../components/main/skeleton/Skeleton'
-import WebData from '../../context/dataContext.jxs'
+import React, { useContext, useEffect, useState } from 'react';
+import Background from '../../components/background/Background';
+import NavBar from '../../components/header/NavBar';
+import Footer from '../../components/main/Footer';
+import Main from '../../components/main/Main';
+import Skeleton from '../../components/main/skeleton/Skeleton';
+import WebData from '../../context/dataContext.jxs';
 
 const AppContainer = () => {
-  const {loading, sectionOrdered} = useContext(WebData)
+  const { loading, sectionOrdered } = useContext(WebData);
+  console.log('loading', loading);
+  console.log('sectionOrdered', sectionOrdered);
   const [windowSize, setWindowSize] = useState()
   useEffect(() => {
     function handleResize() {

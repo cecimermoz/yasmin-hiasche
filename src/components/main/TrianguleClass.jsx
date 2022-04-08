@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 	trianWrapper: {
 		width: '200px',
 		minHeigth: '200px',
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const TrianguleClass = ({ title, text }) => {
+const TrianguleClass = () => {
 	const classes = useStyles();
 
 	return (
