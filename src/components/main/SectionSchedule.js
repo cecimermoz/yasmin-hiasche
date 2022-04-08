@@ -1,11 +1,9 @@
-import  Schedule  from './Schedule'
+import Schedule from './Schedule';
 
-const SectionSchedule = ({sectionData}) => {
-    const {title, listDays} = sectionData;
+const SectionSchedule = ({ sectionData }) => {
+	const { title, listDays } = sectionData;
 
-    return (
-        <Schedule title={title} schedule={listDays} />
-    )
-}
+	return <Schedule title={title} schedule={listDays} />;
+};
 
 export default SectionSchedule;
