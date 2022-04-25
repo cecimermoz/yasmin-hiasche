@@ -13,9 +13,9 @@
   },
   "plugins": ["react"],
   "rules": {
-    "indent": ["error"],
-    "linebreak-style": ["error"],
-    "quotes": ["error", "single"],
-    "semi": ["error"]
+    "indent": ["warn"],
+    "linebreak-style": ["warn"],
+    "quotes": ["warn", "single"],
+    "semi": ["warn"]
   }
 }
