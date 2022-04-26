@@ -85,6 +85,8 @@ const GalleryModal = (props) => {
     modalBodyPrev,
   } = useStyles()
   const handleKeyDown = (e) => {
+    console.log(e)
+    console.log(hasNext)
     e.keyCode === 27 && closeModal(e)
     e.keyCode === 37 && hasPrev && findPrev(e)
     e.keyCode === 39 && hasNext && findNext(e)
@@ -94,7 +96,7 @@ const GalleryModal = (props) => {
     document.body.addEventListener('keydown', handleKeyDown)
     return () => document.body.removeEventListener('keydown', handleKeyDown)
     // eslint-disable-next-line
-  }, [])
+    }, [])
 
   return (
     <div>
@@ -107,7 +109,7 @@ const GalleryModal = (props) => {
             onClick={(e) => closeModal(e)}
             onKeyDown={handleKeyDown}
           >
-            &times;
+                        &times;
           </button>
           {hasPrev && (
             <button
@@ -115,7 +117,7 @@ const GalleryModal = (props) => {
               onClick={(e) => findPrev(e)}
               onKeyDown={() => handleKeyDown}
             >
-              &lsaquo;
+                            &lsaquo;
             </button>
           )}
           {hasNext && (
@@ -124,7 +126,7 @@ const GalleryModal = (props) => {
               onClick={(e) => findNext(e)}
               onKeyDown={() => handleKeyDown}
             >
-              &rsaquo;
+                            &rsaquo;
             </button>
           )}
           <img src={src} alt="imagen de la galeria" />

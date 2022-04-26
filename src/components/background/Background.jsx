@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import { breaks } from '../themes/generalTheme'
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   pic: {
     background:
-      'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/ANIMA-30.jpg?alt=media&token=3a8579b6-0485-4bde-b5f4-8aa9aea2b5b3)',
+            'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/ANIMA-30.jpg?alt=media&token=3a8579b6-0485-4bde-b5f4-8aa9aea2b5b3)',
     width: '100%',
     height: '100%',
     backgroundSize: 'contain',
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gradient: {
     background:
-      'linear-gradient(180deg, rgba(76, 31, 110, 1) 0%, rgba(141,13,152,1) 100%)',
+            'linear-gradient(180deg, rgba(76, 31, 110, 1) 0%, rgba(141,13,152,1) 100%)',
     width: '100%',
     height: '100%',
     zIndex: '5',
