@@ -8,8 +8,6 @@ import {WebData} from '../../context/dataContext.jsx';
 
 const AppContainer = () => {
     const { loading, sectionOrdered } = useContext(WebData);
-    console.log('loading', loading);
-    console.log('sectionOrdered', sectionOrdered);
     const [windowSize, setWindowSize] = useState();
     useEffect(() => {
         function handleResize() {

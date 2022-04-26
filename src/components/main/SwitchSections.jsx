@@ -13,7 +13,7 @@ const SwitchSections = ({ sectionData }) => {
         'medios de pago': <SectionText sectionData={sectionData} />,
         'formacion': <SectionText sectionData={sectionData} />,
         'biografia': <SectionText sectionData={sectionData} />,
-        'galeria': <SectionGalery sectionData={sectionData} />,
+        'galeria': <SectionGalery />,
         'ubicacion': <SectionLocation sectionData={sectionData} />,
         'contacto': <SectionRrSs sectionData={sectionData} />
     };

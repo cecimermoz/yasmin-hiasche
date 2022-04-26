@@ -2,7 +2,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import ImageGaleryContent from './ImageGaleryContent';
-import * as albumYasmin from '../../../assets/albums/yasmin';
 
 const useStyles = makeStyles((theme) => ({
     galleryGrid: {
@@ -20,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Gallery = ({ categories }) => {
-    console.log('albumYasmin', albumYasmin);
     const { galleryGrid } = useStyles();
     const categoriesToOrder = Object.entries(categories).map((cat) => cat[1]);
     const categoriesOrdered = categoriesToOrder?.sort((a, b) => {

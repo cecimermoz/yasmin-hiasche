@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { makeStyles } from '@material-ui/core/styles'
 import React, { useEffect } from 'react'
 import { breaks } from '../../themes/generalTheme'
