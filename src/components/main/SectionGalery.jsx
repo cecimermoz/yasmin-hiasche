@@ -3,7 +3,7 @@
 import { yasminAlbum, eventosAlbum, clasesAlbum, escuelaAlbum, egresadasAlbum } from '../../assets/albums';
 import Galery from './galery/Galery';
 
-const formatAlbum = (album, name, order,previewPic) => {
+const formatAlbum = (album, name, order, previewPic) => {
     return {
         album,
         name,
