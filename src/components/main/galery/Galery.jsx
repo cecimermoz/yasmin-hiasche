@@ -20,17 +20,17 @@ const useStyles = makeStyles((theme) => ({
 
 const Gallery = ({ categories }) => {
   const { galleryGrid } = useStyles()
-  const categoriesToOrder = Object.entries(categories).map((cat) => cat[1])
-  const categoriesOrdered = categoriesToOrder?.sort((a, b) => {
+  const categoriesOrdered = categories?.sort((a, b) => {
     return a.order - b.order
   })
+  
   return (
     <div className="gallery-container">
       <div className={`gallery-grid ${galleryGrid}`}>
-        {Object.entries(categoriesOrdered).map((category, i) => {
+        {categoriesOrdered.map((category, i) => {
           return (
             <ImageGaleryContent
-              category={category[1]}
+              category={category}
               index={i}
               key={i}
             />
