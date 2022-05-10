@@ -1,5 +1,6 @@
 {
     "name": "yh",
+    "homepage": ".",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -42,7 +43,6 @@
             "last 1 safari version"
         ]
     },
-    "homepage": "https://cecimermoz.gitlab.io/yasmin-hiasche",
     "devDependencies": {
         "@babel/eslint-parser": "^7.17.0",
         "@babel/eslint-plugin": "^7.17.7",
@@ -50,7 +50,7 @@
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.29.4",
-        "firebase-tools": "^10.7.1",
+        "firebase-tools": "^10.8.0",
         "prettier": "^2.6.2"
     }
 }

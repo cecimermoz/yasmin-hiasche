@@ -61,7 +61,6 @@ const ImageGaleryContent = (props) => {
   const openModal = () => {
     setCurrentIndex(0)
     setIsModalOpen(true)
-    console.log(currentIndex)
   }
   const closeModal = (e) => {
     e !== undefined && e.preventDefault()
