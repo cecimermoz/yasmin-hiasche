@@ -6,10 +6,12 @@ export const WebData = createContext(0)
 // eslint-disable-next-line react/prop-types
 export const Context = ({ children }) => {
   const [loading, setLoading] = useState(false)
+  const [passToHomePage, setPassToHomePage] = useState(false)
   const [sectionsInfo, setSectionsInfo] = useState([])
   const sectionOrdered = sectionsInfo?.sort((a, b) => {
     return a.order - b.order
   })
+  const handleBackgroundPreview = () => setPassToHomePage(true)
 
   useEffect(() => {
     setLoading(true)
@@ -31,6 +33,8 @@ export const Context = ({ children }) => {
   const value = {
     loading,
     sectionOrdered,
+    passToHomePage,
+    handleBackgroundPreview
   }
 
   return <WebData.Provider value={value}>{children}</WebData.Provider>
