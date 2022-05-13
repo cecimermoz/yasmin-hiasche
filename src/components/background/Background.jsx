@@ -70,7 +70,7 @@ const Background = (props) => {
     <div className={backgroundWrapper}>
       <div className={gradient}></div>
       {isPicOn && <div className={pic} /> }
-      {previePics && <BackgroundSlider images={arrayBackgroundPics} duration={5} transition={1} /> }
+      {previePics && <BackgroundSlider images={arrayBackgroundPics} duration={4} transition={1} /> }
       <div className={black}></div>
     </div>
   )
