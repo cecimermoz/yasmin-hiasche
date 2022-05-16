@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { WebData } from '../../context/dataContext';
-import Firulete from '../main/util/Firulete';
+//import Firulete from '../main/util/Firulete';
 import { breaks } from '../themes/generalTheme';
 
 const useStyles = makeStyles((theme) => ({
@@ -69,13 +69,13 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const LogoCTA = () => {
-  const { button, logo, logoWrapper, tittle, firuleteGeneral, firuleteRight } = useStyles()
+  const { button, logo, logoWrapper } = useStyles()
   const { handleBackgroundPreview } = useContext(WebData)
 
   return (
     <div className={logoWrapper} >
       <div className={logo} />
-      <div style={{position: 'relative'}}>
+      {/*<div style={{position: 'relative'}}>
         <Firulete customClasses={{general: firuleteGeneral, rigth: firuleteRight}}>
           <h1 className={tittle}>
             Egresada de la escuela de <strong>saida</strong>
@@ -83,7 +83,7 @@ const LogoCTA = () => {
             integrante del ballet <strong>rakkasah</strong>
           </h1>
         </Firulete>  
-      </div>
+      </div>*/}
       <button className={button} onClick={handleBackgroundPreview} >Ingresar</button>
     </div>
   );
