@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { WebData } from '../../context/dataContext';
 import Firulete from '../main/util/Firulete';
+import { breaks } from '../themes/generalTheme';
 
 const useStyles = makeStyles((theme) => ({
   logoWrapper:{
@@ -9,13 +10,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
-    height: '100vh'
+    height: '100vh',
+    padding: '0 15px'
   },
   logo:{
     height: '20vh',
-    width: '35%',
+    width: '100%',
     backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/Estudio%20de%20DanzasYasmin%20Hiasche-1.png?alt=media&token=ed44cac9-462a-4cc8-930c-fd00ccaff737)',
     backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
     backgroundSize: 'contain', 
   },
   tittle:{
@@ -24,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     color: theme.palette.secondary.main,
     fontSize: '20px',
+    [theme.breakpoints.down(breaks[2])]: {
+      fontSize: '16px',
+    }
   },
   firuleteGeneral:{
     width: '15%',
@@ -31,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     left: '-18%',
     top: '30%',
+    [theme.breakpoints.down(breaks[2])]: {
+      display: 'none'
+    },
   },
   firuleteRight:{
     right: '-18%',
@@ -51,6 +60,10 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     '&:hover':{
       background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.ceci} 100%)`,
+    },
+    [theme.breakpoints.down(breaks[2])]: {
+      maxWidth: 'initial',
+      padding: '15px',
     }
   }
 }))

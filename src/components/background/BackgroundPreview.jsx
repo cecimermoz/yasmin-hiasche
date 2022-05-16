@@ -1,14 +1,8 @@
 import React from 'react'
-//import { makeStyles } from '@material-ui/core'
 import BackgroundSlider from 'react-background-slider'
-//import { breaks } from '../themes/generalTheme'
 
-
-/*const useStyles = makeStyles(() => ({
-}))*/
 
 const BackgroundPreview = () => {
-  // const { backgroundWrapper, gradient, pic, black } = useStyles()
     
   const arrayBackgroundPics = [
     'https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/16711626_10210666486833501_3082815882271337721_n.jpg?alt=media&token=212cd664-4f55-4984-b912-d540792dd229',
