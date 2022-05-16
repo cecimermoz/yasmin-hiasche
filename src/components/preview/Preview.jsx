@@ -7,7 +7,6 @@ const Preview = () => {
     <>
       <Background previePics />
       <LogoCTA />
-      
     </>
   );
 }

@@ -34,6 +34,7 @@ export const Context = ({ children }) => {
     loading,
     sectionOrdered,
     passToHomePage,
+    setLoading,
     handleBackgroundPreview
   }
 

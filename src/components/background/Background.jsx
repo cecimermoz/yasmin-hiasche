@@ -15,11 +15,6 @@ const useStyles = makeStyles((theme) => ({
       height: '100vh',
       zIndex: '2',
       width: '100%',
-      /*'& > figure': {
-        [theme.breakpoints.up(breaks[5])]: {
-          backgroundSize: 'contain', 
-        },
-      }*/
     }
   },
   black: {
@@ -54,14 +49,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Background = (props) => {
-  const { isPicOn, previePics } = props
+  const { isPicOn, previePics, setLoading } = props
   const { backgroundWrapper, gradient, pic, black } = useStyles()
 
   return (
-    <div className={backgroundWrapper}>
+    <div className={backgroundWrapper} >
       <div className={gradient}></div>
       {isPicOn && <div className={pic} /> }
-      {previePics &&  <BackgroundPreview />}
+      {previePics &&  <BackgroundPreview onLoad={() => setLoading(true)}/>}
       <div className={black}></div>
     </div>
   )

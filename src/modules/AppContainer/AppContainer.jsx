@@ -8,7 +8,7 @@ import Preview from '../../components/preview'
 import { WebData } from '../../context/dataContext.jsx'
 
 const AppContainer = () => {
-  const { loading, sectionOrdered, passToHomePage } = useContext(WebData)
+  const { loading, setLoading, sectionOrdered, passToHomePage } = useContext(WebData)
   const [windowSize, setWindowSize] = useState()
   useEffect(() => {
     function handleResize() {
@@ -24,10 +24,10 @@ const AppContainer = () => {
   ) : (
     sectionOrdered.length > 0 && (
       !passToHomePage 
-        ? <Preview />
+        ? <Preview onLoad={() => setLoading(true)} />
         : (
           <NavBar sections={sectionOrdered} windowSize={windowSize}>
-            <Background isPicOn />
+            <Background isPicOn setLoading={setLoading} />
             <Main sectionsInfo={sectionOrdered} />
             <Footer />
           </NavBar>
