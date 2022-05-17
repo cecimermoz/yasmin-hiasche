@@ -1,7 +1,8 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { breakpoints, spacing } from '../themes/generalTheme'
+import { spacing } from '../themes/generalTheme'
+import Firulete from './util/Firulete'
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -10,22 +11,7 @@ const useStyles = makeStyles(() => ({
   },
   subtitle: {
     margin: `0 ${spacing(1)}px ${spacing(2)}px ${spacing(1)}px`,
-  },
-  firulete: {
-    background:
-            'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/firulete.png?alt=media&token=7a561207-af2d-4cd0-89be-968d9f5bbe32)',
-    width: '40px',
-    backgroundSize: '100%',
-    marginTop: '5px',
-    backgroundRepeat: 'no-repeat',
-    visibility: 'hidden',
-    [breakpoints.up(360)]: {
-      visibility: 'visible',
-    },
-  },
-  fRight: {
-    transform: 'rotateY(180deg)',
-  },
+  }
 }))
 
 const Title = ({ title }) => {
@@ -33,11 +19,11 @@ const Title = ({ title }) => {
 
   return (
     <div className={classes.title}>
-      <div className={`${classes.firulete} ${classes.fLeft}`} />
-      <Typography variant="h2" className={classes.subtitle}>
-        {title}
-      </Typography>
-      <div className={`${classes.firulete} ${classes.fRight}`} />
+      <Firulete>
+        <Typography variant="h2" className={classes.subtitle}>
+          {title}
+        </Typography>
+      </Firulete>
     </div>
   )
 }

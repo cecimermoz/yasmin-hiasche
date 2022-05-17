@@ -4,10 +4,11 @@ import NavBar from '../../components/header/NavBar'
 import Footer from '../../components/main/Footer'
 import Main from '../../components/main/Main'
 import Skeleton from '../../components/main/skeleton/Skeleton'
+import Preview from '../../components/preview'
 import { WebData } from '../../context/dataContext.jsx'
 
 const AppContainer = () => {
-  const { loading, sectionOrdered } = useContext(WebData)
+  const { loading, setLoading, sectionOrdered, passToHomePage } = useContext(WebData)
   const [windowSize, setWindowSize] = useState()
   useEffect(() => {
     function handleResize() {
@@ -22,11 +23,15 @@ const AppContainer = () => {
     <Skeleton />
   ) : (
     sectionOrdered.length > 0 && (
-      <NavBar sections={sectionOrdered} windowSize={windowSize}>
-        <Background isPicOn />
-        <Main sectionsInfo={sectionOrdered} />
-        <Footer />
-      </NavBar>
+      !passToHomePage 
+        ? <Preview onLoad={() => setLoading(true)} />
+        : (
+          <NavBar sections={sectionOrdered} windowSize={windowSize}>
+            <Background isPicOn setLoading={setLoading} />
+            <Main sectionsInfo={sectionOrdered} />
+            <Footer />
+          </NavBar>
+        )
     )
   )
 }
