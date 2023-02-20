@@ -12,10 +12,13 @@ const useStyles = makeStyles((theme) => ({
     zIndex: '-1',
     '& > #ReactBackgroundSlider': {
       position: 'absolute',
-      height: '100vh',
+      height: 'calc(100vh - 64px)',
       zIndex: '2',
       width: '100%',
-    }
+      maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0))',
+      '-webkit-mask-image':
+        '-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.75)), to(rgba(0,0,0,0)))',
+    },
   },
   black: {
     background: '#0d0513',
@@ -25,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
   },
   pic: {
-    backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/ANIMA-30.jpg?alt=media&token=3a8579b6-0485-4bde-b5f4-8aa9aea2b5b3)',
+    // backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/ANIMA-30.jpg?alt=media&token=3a8579b6-0485-4bde-b5f4-8aa9aea2b5b3)',
     width: '100%',
     height: '100%',
     backgroundSize: 'contain',
@@ -39,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gradient: {
-    background: 'linear-gradient(180deg, rgba(76, 31, 110, 1) 0%, rgba(141,13,152,1) 100%)',
+    background:
+      'linear-gradient(180deg, rgba(76, 31, 110, 1) 0%, rgba(141,13,152,1) 100%)',
     width: '100%',
     height: '100%',
     zIndex: '5',
@@ -53,10 +57,10 @@ const Background = (props) => {
   const { backgroundWrapper, gradient, pic, black } = useStyles()
 
   return (
-    <div className={backgroundWrapper} >
+    <div className={backgroundWrapper}>
       <div className={gradient}></div>
-      {isPicOn && <div className={pic} /> }
-      {previePics &&  <BackgroundPreview onLoad={() => setLoading(true)}/>}
+      {isPicOn && <div className={pic} />}
+      {previePics && <BackgroundPreview onLoad={() => setLoading(true)} />}
       <div className={black}></div>
     </div>
   )

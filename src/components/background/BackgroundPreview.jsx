@@ -9,16 +9,18 @@ import p6 from '../../assets/previewPics/p6.jpg'
 import p7 from '../../assets/previewPics/p7.jpg'
 import p8 from '../../assets/previewPics/p8.jpg'
 
-
 const BackgroundPreview = () => {
-    
-  const arrayBackgroundPics = [
-    p1,p2,p3,p4,p5,p6,p7,p8
-  ].sort(() => 0.5 - Math.random());
+  const arrayBackgroundPics = [p1, p2, p3, p4, p5, p6, p7, p8].sort(
+    () => 0.5 - Math.random()
+  )
 
-  return(
-    <BackgroundSlider images={arrayBackgroundPics} duration={4} transition={1} />
+  return (
+    <BackgroundSlider
+      images={arrayBackgroundPics}
+      duration={4}
+      transition={1}
+    />
   )
 }
 
-export default BackgroundPreview;
+export default BackgroundPreview
