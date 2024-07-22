@@ -1,16 +1,17 @@
-import { Button } from '@material-ui/core'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
-import IconButton from '@material-ui/core/IconButton'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import MenuIcon from '@material-ui/icons/Menu'
+import {
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  makeStyles,
+} from '@mui/material'
+import { useTheme } from '@emotion/react'
 import React, { useState } from 'react'
 import { breaks } from '../themes/generalTheme'
+import { ChevronLeft, ChevronRight, Menu } from '@mui/icons-material'
 
 const drawerWidth = '100%'
 
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fondoImg: {
     backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/12961308_836681903125720_2764887378204918362_o.jpg?alt=media&token=457bdb2c-4a7c-4f20-97cf-6c0826fecd88)',
+      'url(https://firebasestorage.googleapis.com/v0/b/yasmin-hiasche-web.appspot.com/o/12961308_836681903125720_2764887378204918362_o.jpg?alt=media&token=457bdb2c-4a7c-4f20-97cf-6c0826fecd88)',
     backgroundPosition: 'bottom',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '60%',
@@ -125,11 +126,10 @@ const MenuHidden = ({ sections }) => {
     handleDrawerClose()
     const idFormat = id.replace(/ /g, '-')
     const anchor = (event.target.ownerDocument || document).querySelector(
-            `#${idFormat}`
+      `#${idFormat}`
     )
     setTimeout(() => {
-      anchor &&
-                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      anchor && anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }, 400)
   }
 
@@ -141,7 +141,7 @@ const MenuHidden = ({ sections }) => {
         edge="start"
         onClick={handleDrawerOpen}
       >
-        <MenuIcon />
+        <Menu />
       </IconButton>
 
       <Drawer
@@ -155,11 +155,7 @@ const MenuHidden = ({ sections }) => {
       >
         <div className={`${classes.drawerHeader} ${classes.navBar}`}>
           <IconButton onClick={handleDrawerClose} color="secondary">
-            {theme.direction === 'rtl' ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
+            {theme.direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />}
           </IconButton>
         </div>
         <Divider className={classes.divider} />

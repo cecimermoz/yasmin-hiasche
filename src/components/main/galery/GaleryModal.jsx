@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { makeStyles } from '@material-ui/core/styles'
+import { Typography, makeStyles } from '@mui/material'
+
 import React, { useEffect } from 'react'
 import { breaks } from '../../themes/generalTheme'
 
@@ -96,7 +97,7 @@ const GalleryModal = (props) => {
     document.body.addEventListener('keydown', handleKeyDown)
     return () => document.body.removeEventListener('keydown', handleKeyDown)
     // eslint-disable-next-line
-    }, [])
+  }, [])
 
   return (
     <div>
@@ -109,7 +110,7 @@ const GalleryModal = (props) => {
             onClick={(e) => closeModal(e)}
             onKeyDown={handleKeyDown}
           >
-                        &times;
+            &times;
           </button>
           {hasPrev && (
             <button
@@ -117,7 +118,7 @@ const GalleryModal = (props) => {
               onClick={(e) => findPrev(e)}
               onKeyDown={() => handleKeyDown}
             >
-                            &lsaquo;
+              &lsaquo;
             </button>
           )}
           {hasNext && (
@@ -126,7 +127,7 @@ const GalleryModal = (props) => {
               onClick={(e) => findNext(e)}
               onKeyDown={() => handleKeyDown}
             >
-                            &rsaquo;
+              &rsaquo;
             </button>
           )}
           <img src={src} alt="imagen de la galeria" />

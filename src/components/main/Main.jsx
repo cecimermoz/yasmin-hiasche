@@ -1,7 +1,7 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import { SwitchSections } from './SwitchSections'
 import Title from './Title'
+import { makeStyles } from '@mui/material'
 
 const useStyles = makeStyles((theme) => ({
   main: {

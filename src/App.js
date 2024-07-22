@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import generalTheme from './components/themes/generalTheme'
 import { Context } from './context/dataContext'

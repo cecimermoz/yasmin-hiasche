@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Typography, makeStyles } from '@mui/material'
+
 import React, { useState } from 'react'
 import GalleryModal from './GaleryModal'
 
@@ -70,11 +70,10 @@ const ImageGaleryContent = (props) => {
   const findPrev = (e) => {
     e !== undefined && e.preventDefault()
     setCurrentIndex(currentIndex - 1)
-
   }
   const findNext = (e) => {
     e !== undefined && e.preventDefault()
-    setCurrentIndex(currentIndex+1)
+    setCurrentIndex(currentIndex + 1)
   }
 
   return (

@@ -1,5 +1,5 @@
+import { makeStyles } from '@mui/material'
 /* eslint-disable react/prop-types */
-import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import { breaks } from '../themes/generalTheme'
 import BackgroundPreview from './BackgroundPreview'

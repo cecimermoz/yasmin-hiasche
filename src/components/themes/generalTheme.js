@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme } from '@mui/material'
 
-const generalTheme = createMuiTheme({
+const generalTheme = createTheme({
   breaks: [320, 400, 500, 600, 700, 800, 900, 1000, 1200, 1500, 1980],
   overrides: {
     MuiContainer: {

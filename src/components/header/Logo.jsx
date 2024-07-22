@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import logo from '../../assets/img/Estudio de DanzasYasmin Hiasche-1.png'
+import { makeStyles } from '@mui/material'
 
 const useStyles = makeStyles(() => ({
   logo: {

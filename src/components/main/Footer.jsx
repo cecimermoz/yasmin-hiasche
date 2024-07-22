@@ -1,7 +1,6 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import { palette, spacing } from '../themes/generalTheme'
-import { Typography } from '@material-ui/core'
+import { Typography, makeStyles } from '@mui/material'
 
 const useStyles = makeStyles(() => ({
   footerText: {
@@ -27,13 +26,13 @@ const Footer = () => {
   return (
     <footer>
       <Typography variant="body1" className={footerText}>
-                Desarrollado por{' '}
+        Desarrollado por{' '}
         <a
           rel="noreferrer"
           href="https://www.linkedin.com/in/ceciliamermoz/"
           target="_blank"
         >
-                    Cecilia Mermoz
+          Cecilia Mermoz
         </a>
       </Typography>
     </footer>

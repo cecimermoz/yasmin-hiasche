@@ -1,10 +1,8 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/material'
+
 import { palette, spacing } from '../themes/generalTheme'
-import FacebookIcon from '@material-ui/icons/Facebook'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import WhatsAppIcon from '@material-ui/icons/WhatsApp'
+import { Facebook, Instagram, MailOutline, WhatsApp } from '@mui/icons-material'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -68,7 +66,7 @@ const SectionRrSs = ({ sectionData }) => {
         target="_blank"
         className={icon}
       >
-        <FacebookIcon
+        <Facebook
           color="secondary"
           style={{ fontSize: 30 }}
           alt={sectionData.facebook}
@@ -82,7 +80,7 @@ const SectionRrSs = ({ sectionData }) => {
         target="_blank"
         className={icon}
       >
-        <InstagramIcon
+        <Instagram
           color="secondary"
           style={{ fontSize: 30 }}
           alt={sectionData.instagram}
@@ -96,7 +94,7 @@ const SectionRrSs = ({ sectionData }) => {
         rel="noreferrer"
         className={icon}
       >
-        <MailOutlineIcon
+        <MailOutline
           color="secondary"
           style={{ fontSize: 30 }}
           alt={sectionData.mail}
@@ -110,7 +108,7 @@ const SectionRrSs = ({ sectionData }) => {
         rel="noreferrer"
         className={icon}
       >
-        <WhatsAppIcon
+        <WhatsApp
           color="secondary"
           style={{ fontSize: 30 }}
           alt={sectionData.whatsapp}

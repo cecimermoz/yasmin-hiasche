@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/material'
 import React from 'react'
 import {
   AllDaysWrapper,
@@ -53,17 +53,13 @@ const Schedule = ({ schedule, className }) => {
 
           <HourWrapper>
             {row[0]?.hours?.map((eachHour, i) => (
-              <DayCell key={`${i}-${eachHour}`}>
-                {eachHour[1]}
-              </DayCell>
+              <DayCell key={`${i}-${eachHour}`}>{eachHour[1]}</DayCell>
             ))}
           </HourWrapper>
 
           <ClassWrapper>
             {row[0]?.classType?.map((eachClass, i) => (
-              <DayCell key={`${i}-${eachClass}`}>
-                {eachClass[1]}
-              </DayCell>
+              <DayCell key={`${i}-${eachClass}`}>{eachClass[1]}</DayCell>
             ))}
           </ClassWrapper>
         </RowWrapper>

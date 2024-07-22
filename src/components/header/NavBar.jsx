@@ -1,16 +1,15 @@
-import { BottomNavigation } from '@material-ui/core'
-import AppBar from '@material-ui/core/AppBar'
-import Container from '@material-ui/core/Container'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Fab from '@material-ui/core/Fab'
-import { makeStyles } from '@material-ui/core/styles'
-import Toolbar from '@material-ui/core/Toolbar'
-import WhatsAppIcon from '@material-ui/icons/WhatsApp'
 import React from 'react'
 import NavLink from '../styled-components/logo-style'
 import { palette, spacing } from '../themes/generalTheme'
 import Logo from './Logo'
 import MenuHidden from './MenuHidden'
+import { Fab, makeStyles } from '@mui/material'
+import AppBar from '@mui/material/AppBar'
+import Container from '@mui/material/Container'
+import CssBaseline from '@mui/material/CssBaseline'
+import BottomNavigation from '@mui/material/BottomNavigation'
+import Toolbar from '@mui/material/Toolbar'
+import { WhatsApp } from '@mui/icons-material'
 
 const useStyles = makeStyles(() => ({
   header: {
@@ -83,11 +82,10 @@ const NavBar = (props) => {
   const handleClick = (event, id) => {
     const idFormat = id.replace(/ /g, '-')
     const anchor = (event.target.ownerDocument || document).querySelector(
-            `#${idFormat}`
+      `#${idFormat}`
     )
     setTimeout(() => {
-      anchor &&
-                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      anchor && anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }, 400)
   }
 
@@ -105,7 +103,7 @@ const NavBar = (props) => {
             ) : (
               <>
                 <Logo />
-                <BottomNavigation className={navWrapper}>
+                <BottomNavigationAction className={navWrapper}>
                   {sections?.map((link) => {
                     return (
                       <NavLink
@@ -113,13 +111,11 @@ const NavBar = (props) => {
                         label={link.title}
                         key={link.title}
                         className={flex0}
-                        onClick={(e) =>
-                          handleClick(e, link.title)
-                        }
+                        onClick={(e) => handleClick(e, link.title)}
                       />
                     )
                   })}
-                </BottomNavigation>
+                </BottomNavigationAction>
               </>
             )}
           </Toolbar>
@@ -135,12 +131,8 @@ const NavBar = (props) => {
         role="presentation"
         className={whatsappButton}
       >
-        <Fab
-          color="primary"
-          size="medium"
-          aria-label="contact by whatsapp"
-        >
-          <WhatsAppIcon />
+        <Fab color="primary" size="medium" aria-label="contact by whatsapp">
+          <WhatsApp />
         </Fab>
       </a>
     </React.Fragment>
