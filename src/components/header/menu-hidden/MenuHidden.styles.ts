@@ -20,6 +20,7 @@ export const StyledDrawer = styled(Drawer)(({ theme: { breakpoints } }) => ({
 export const StyledDrawerHeader = styled(Stack)(
   ({ theme: { spacing, mixins } }) => ({
     alignItems: 'center',
+    flexDirection: 'row',
     padding: spacing(0, 1),
     justifyContent: 'flex-end',
     zIndex: 10,

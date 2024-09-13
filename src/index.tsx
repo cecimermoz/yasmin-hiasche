@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { Container, createRoot } from 'react-dom/client'
 import { DataContext } from './context/dataContext'
 import AppContainer from './modules/AppContainer'

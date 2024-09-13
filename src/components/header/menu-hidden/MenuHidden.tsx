@@ -6,7 +6,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { useState } from 'react'
-import { Menu } from '@mui/icons-material'
+import { ChevronLeft, ChevronRight, Menu } from '@mui/icons-material'
 import {
   FondoColor,
   FondoImg,
@@ -57,7 +57,7 @@ export const MenuHidden = ({ sections }) => {
       >
         <StyledDrawerHeader>
           <IconButton onClick={handleDrawerClose} color="secondary">
-            {/* {theme.direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />} */}
+            {theme.direction === 'rtl' ? <ChevronLeft /> : <ChevronRight />}
           </IconButton>
         </StyledDrawerHeader>
         <Divider />

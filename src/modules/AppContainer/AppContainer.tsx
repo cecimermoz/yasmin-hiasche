@@ -22,7 +22,7 @@ const AppContainer = () => {
   ) : (
     sectionOrdered.length > 0 && (
       <NavBar sections={sectionOrdered} windowSize={windowSize}>
-        <Background isPicOn setLoading={setLoading} previePics />
+        <Background setLoading={setLoading} previePics />
         <Main sectionsInfo={sectionOrdered} />
         <Footer />
       </NavBar>

@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { Box, Fab } from '@mui/material'
+import { Box, Fab, Stack, Toolbar } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import CssBaseline from '@mui/material/CssBaseline'
-import Toolbar from '@mui/material/Toolbar'
 import { WhatsApp } from '@mui/icons-material'
 import { MenuHidden, Logo } from '../index'
 import {
@@ -32,37 +31,35 @@ export const NavBar = (props) => {
     <React.Fragment>
       <StyledHeader>
         <CssBaseline />
-        <AppBar>
-          <StyledToolbar>
-            {windowSize < 1125 ? (
-              <>
-                <MenuHidden sections={sections} />
-                <Logo />
-              </>
-            ) : (
-              <>
-                <Logo />
-                <Box>
-                  {sections?.map((link) => {
-                    return (
-                      <NavLink
-                        showLabel
-                        label={link.title}
-                        key={link.title}
-                        onClick={(e) => handleClick(e, link.title)}
-                        sx={{
-                          flex: 0,
-                          textTransform: 'capitalize',
-                        }}
-                      />
-                    )
-                  })}
-                </Box>
-              </>
-            )}
-          </StyledToolbar>
-        </AppBar>
-        <Toolbar id="back-to-top-anchor" />
+        <StyledToolbar>
+          {windowSize < 1125 ? (
+            <>
+              <MenuHidden sections={sections} />
+              <Logo />
+            </>
+          ) : (
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              width="100%"
+            >
+              <Logo />
+              <Box>
+                {sections?.map((link) => {
+                  return (
+                    <NavLink
+                      showLabel
+                      label={link.title}
+                      key={link.title}
+                      onClick={(e) => handleClick(e, link.title)}
+                    />
+                  )
+                })}
+              </Box>
+            </Stack>
+          )}
+        </StyledToolbar>
       </StyledHeader>
       <ContainerWithoutPad>{children}</ContainerWithoutPad>
 

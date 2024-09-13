@@ -12,24 +12,6 @@ export const Schedule = ({ schedule, className }) => {
   const theme = useTheme()
   const { breakpoints } = theme
 
-  const queryStyles = {
-    [breakpoints.up('sm')]: {
-      marginLeft: '30px',
-    },
-    // [breakpoints.up('500px')]: {
-    //   marginLeft: '60px',
-    // },
-    // [breakpoints.up('600px')]: {
-    //   marginLeft: '95px',
-    //   fontSize: '16px',
-    // },
-    [breakpoints.up('md')]: {
-      marginLeft: '20%',
-    },
-    [breakpoints.up('lg')]: {
-      marginLeft: '22%',
-    },
-  }
   const rows = schedule?.map((ph) => [
     {
       day: ph.day,
@@ -39,7 +21,7 @@ export const Schedule = ({ schedule, className }) => {
   ])
 
   return (
-    <AllDaysWrapper className={className} sx={{ queryStyles }}>
+    <AllDaysWrapper className={className}>
       {rows.map((row, i) => (
         <RowWrapper key={i}>
           <DayWrapper>

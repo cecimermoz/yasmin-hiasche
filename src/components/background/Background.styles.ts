@@ -1,17 +1,11 @@
-import { styled } from '@mui/material'
+import { Stack, styled } from '@mui/material'
 
 export const BackgroundWrapper = styled('div')({
   width: '100%',
   height: '100%',
+  display: 'grid',
   position: 'absolute',
   zIndex: '-1',
-  '& > #ReactBackgroundSlider': {
-    position: 'absolute',
-    height: 'calc(100vh - 64px)',
-    zIndex: '2',
-    width: '100%',
-    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0))',
-  },
 })
 
 export const Overlay = styled('div')({
@@ -19,21 +13,21 @@ export const Overlay = styled('div')({
   width: '100%',
   height: '100%',
   opacity: '1',
-  position: 'absolute',
+  gridColumn: 1,
+  gridRow: 1,
 })
 
-export const StyledPic = styled('div')(({ theme: { breakpoints } }) => ({
-  width: '100%',
+export const BackgroundImage = styled(Stack, {
+  shouldForwardProp: (prop) => prop !== 'url' && prop !== 'isVisible',
+})<{ url: string; isVisible: boolean }>(({ url, isVisible }) => ({
+  background: `no-repeat scroll 0% 0% / contain  border-box url(${url}) transparent`,
+  gridColumn: 1,
+  gridRow: 1,
   height: '100%',
-  backgroundSize: 'contain',
-  backgroundPositionX: '25vw',
-  backgroundRepeat: 'no-repeat',
-  position: 'absolute',
-  opacity: '0.75',
-  zIndex: '2',
-  [breakpoints.down(1000)]: {
-    backgroundPositionX: '0vw',
-  },
+  opacity: isVisible ? 1 : 0,
+  transition: 'opacity 500ms ease-in-out',
+  width: '100%',
+  zIndex: 1,
 }))
 
 export const StyledGradient = styled('div')(({ theme }) => ({
@@ -43,5 +37,6 @@ export const StyledGradient = styled('div')(({ theme }) => ({
   height: '100%',
   zIndex: '5',
   opacity: '0.6',
-  position: 'absolute',
+  gridColumn: 1,
+  gridRow: 1,
 }))
