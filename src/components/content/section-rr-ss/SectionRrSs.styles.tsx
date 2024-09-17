@@ -24,7 +24,7 @@ import { Stack, styled } from '@mui/material'
 
 export const IconWrapper = styled(Stack)(({ theme: { breakpoints } }) => ({
   width: '90%',
-  margin: '20px auto',
+  // margin: '20px auto',
   flexDirection: 'column',
   alignItems: 'center',
 }))
@@ -39,6 +39,7 @@ export const StyledIcon = styled('a')(({ theme: { palette, spacing } }) => ({
   color: palette.secondary.main,
   width: '100%',
   justifyContent: 'center',
+
   '&:hover': {
     color: palette.aqua,
     '& svg': {

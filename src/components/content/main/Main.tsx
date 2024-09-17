@@ -1,6 +1,7 @@
 import { SwitchSections } from '../SwitchSections'
+import { Footer } from '../footer/Footer'
 import { Title } from '../title/Title'
-import { StyledMain } from './Main.styles'
+import { StyledMain, StyledSection } from './Main.styles'
 
 export const Main = (props) => {
   const { sectionsInfo } = props
@@ -10,12 +11,13 @@ export const Main = (props) => {
       {sectionsInfo.map((sec, i) => {
         const idTitle = sec.title.replace(/ /g, '-')
         return (
-          <section id={idTitle} key={i} className="mb">
+          <StyledSection id={idTitle} key={i}>
             <Title title={sec.title} />
             <SwitchSections sectionData={sec} />
-          </section>
+          </StyledSection>
         )
       })}
+      <Footer />
     </StyledMain>
   )
 }

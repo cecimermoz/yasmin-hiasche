@@ -4,7 +4,7 @@ import { StyledFooter } from './Footer.styles'
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Typography variant="body1">
+      <Typography variant="body2">
         Desarrollado por{' '}
         <a
           rel="noreferrer"

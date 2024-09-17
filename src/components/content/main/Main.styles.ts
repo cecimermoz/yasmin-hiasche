@@ -1,17 +1,30 @@
 import { styled } from '@mui/material'
 import { APPBAR_SIZE } from '../../../constants'
-const top = APPBAR_SIZE / 8
 
-export const StyledMain = styled('main')(({ theme: { spacing, palette } }) => ({
-  padding: spacing(4),
-  color: palette.secondary.main,
-  textAlign: 'center',
-  maxWidth: '1200px',
-  margin: spacing(top, 'auto', 0, 'auto'),
+export const StyledMain = styled('main')(
+  ({ theme: { breakpoints, spacing, palette } }) => ({
+    color: palette.secondary.main,
+    textAlign: 'center',
+    maxWidth: '1200px',
+    padding: spacing(2),
+    marginTop: APPBAR_SIZE,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing(3),
+    alignItems: 'center',
 
-  '& section.mb': {
-    margin: 'auto',
-    marginBottom: spacing(5),
-    maxWidth: 1000,
-  },
-}))
+    [breakpoints.up('md')]: {
+      padding: spacing(4, 4, 0, 4),
+    },
+    [breakpoints.up('lg')]: {
+      gap: spacing(6),
+    },
+  })
+)
+export const StyledSection = styled('section')(
+  ({ theme: { breakpoints, spacing, palette } }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing(2),
+  })
+)

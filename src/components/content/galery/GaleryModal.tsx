@@ -11,8 +11,6 @@ export const GalleryModal = (props) => {
   const { closeModal, hasNext, hasPrev, findNext, findPrev, src } = props
 
   const handleKeyDown = (e) => {
-    console.log(e)
-    console.log(hasNext)
     e.keyCode === 27 && closeModal(e)
     e.keyCode === 37 && hasPrev && findPrev(e)
     e.keyCode === 39 && hasNext && findNext(e)
@@ -30,7 +28,7 @@ export const GalleryModal = (props) => {
         <StyledModalBody>
           <button
             className="modal-body-a modal-body-close"
-            onClick={(e) => closeModal(e)}
+            onClick={closeModal}
             onKeyDown={handleKeyDown}
           >
             &times;
@@ -38,8 +36,8 @@ export const GalleryModal = (props) => {
           {hasPrev && (
             <button
               className="modal-body-a modal-body-both modal-body-prev"
-              onClick={(e) => findPrev(e)}
-              onKeyDown={() => handleKeyDown}
+              onClick={findPrev}
+              onKeyDown={handleKeyDown}
             >
               &lsaquo;
             </button>
@@ -47,8 +45,8 @@ export const GalleryModal = (props) => {
           {hasNext && (
             <button
               className="modal-body-a modal-body-both"
-              onClick={(e) => findNext(e)}
-              onKeyDown={() => handleKeyDown}
+              onClick={findNext}
+              onKeyDown={handleKeyDown}
             >
               &rsaquo;
             </button>

@@ -4,8 +4,11 @@ export const BackgroundWrapper = styled('div')({
   width: '100%',
   height: '100%',
   display: 'grid',
-  position: 'absolute',
   zIndex: '-1',
+
+  '& > *': {
+    gridArea: '1 / 1',
+  },
 })
 
 export const Overlay = styled('div')({
@@ -24,7 +27,7 @@ export const BackgroundImage = styled(Stack, {
   gridColumn: 1,
   gridRow: 1,
   height: '100%',
-  opacity: isVisible ? 1 : 0,
+  opacity: isVisible ? 0.5 : 0,
   transition: 'opacity 500ms ease-in-out',
   width: '100%',
   zIndex: 1,

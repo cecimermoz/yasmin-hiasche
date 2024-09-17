@@ -13,7 +13,7 @@ const themeOptions: ThemeOptions = {
       lg: 1280,
       xl: 1440,
       xxl: 1920,
-      '2xl': 2560,
+      '3xl': 2560,
     },
   },
   palette: basePalette,

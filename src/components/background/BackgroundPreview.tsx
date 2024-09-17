@@ -6,13 +6,30 @@ import p5 from '../../assets/previewPics/p5.webp'
 import p6 from '../../assets/previewPics/p6.webp'
 import p7 from '../../assets/previewPics/p7.webp'
 import p8 from '../../assets/previewPics/p8.webp'
+import p9 from '../../assets/previewPics/p9.webp'
+import p10 from '../../assets/previewPics/p10.webp'
+import p11 from '../../assets/previewPics/p11.webp'
+import p13 from '../../assets/previewPics/p13.webp'
+import p14 from '../../assets/previewPics/p14.webp'
 import { BackgroundImage } from './Background.styles'
 import React from 'react'
 
 export const BackgroundPreview = () => {
-  const arrayBackgroundPics = [p1, p2, p3, p4, p5, p6, p7, p8].sort(
-    () => 0.5 - Math.random()
-  )
+  const arrayBackgroundPics = [
+    p1,
+    p2,
+    p3,
+    p4,
+    p5,
+    // p6, MALA CALIDAD
+    p7,
+    p8,
+    p9,
+    p10,
+    p11,
+    p13,
+    p14,
+  ].sort(() => 0.5 - Math.random())
   const [isVisible, setIsVisible] = React.useState(true)
   const [image, setImage] = React.useState(arrayBackgroundPics[0])
 

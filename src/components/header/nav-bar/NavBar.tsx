@@ -13,7 +13,7 @@ import {
 } from './NavBar.styles'
 
 export const NavBar = (props) => {
-  const { children, sections, windowSize } = props
+  const { children, sections, windowSize, ...rest } = props
   const number = sections?.filter((s) => s.title === 'contacto')
   const goToWhatsapp = `https://api.whatsapp.com/send?phone=${number[0].whatsapp}&text=Hola,%20¿Me%20pasarías%20información%20de%20las%20clases?`
 

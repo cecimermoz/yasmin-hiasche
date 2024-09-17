@@ -17,10 +17,19 @@ export const NavLink = styled(BottomNavigationAction)(
     textTransform: 'capitalize',
     alignSelf: 'stretch',
     color: palette.secondary.main,
-    borderRadius: 8,
+    paddingBottom: spacing(1),
+    marginBottom: spacing(-1),
+    borderBottom: '1px solid transparent',
+    transition: 'border-color 300ms ease-in-out',
     '& span': {
       fontSize: spacing(2),
       fontFamily: 'Nunito Sans, sans-serif',
+      transition: 'color 300ms ease-in-out',
+    },
+    '&:hover': {
+      color: palette.aqua,
+      borderColor: palette.aqua,
+      transition: 'border-color 300ms ease-in-out',
     },
   })
 )
@@ -33,6 +42,15 @@ export const StyledWhatsappButton = styled('a')(({ theme: { spacing } }) => ({
 
 export const ContainerWithoutPad = styled(Stack)(
   ({ theme: { breakpoints, spacing } }) => ({
-    position: 'relative',
+    display: 'grid',
+    // placeItems: 'center',
+
+    '& > *': {
+      gridArea: '1 / 1',
+    },
+
+    '& > *:not(footer)': {
+      placeSelf: 'center',
+    },
   })
 )

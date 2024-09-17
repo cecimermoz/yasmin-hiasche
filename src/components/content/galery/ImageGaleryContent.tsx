@@ -8,43 +8,36 @@ import { StyledClipPath } from './ImageGaleryContent.styles'
 export const ImageGaleryContent = (props) => {
   const { category, index } = props
   const { album, name, previewPic } = category
-  const [currentIndex, setCurrentIndex] = React.useState(null)
+  const [currentIndex, setCurrentIndex] = React.useState(0)
   const [isModalOpen, setIsModalOpen] = React.useState(false)
 
   const openModal = () => {
-    setCurrentIndex(0)
     setIsModalOpen(true)
   }
   const closeModal = (e) => {
-    e !== undefined && e.preventDefault()
-    setCurrentIndex(0)
+    if (!e) return
     setIsModalOpen(false)
   }
   const findPrev = (e) => {
-    e !== undefined && e.preventDefault()
+    if (!e) return
     setCurrentIndex(currentIndex - 1)
   }
   const findNext = (e) => {
-    e !== undefined && e.preventDefault()
+    if (!e) return
     setCurrentIndex(currentIndex + 1)
   }
 
   return (
     <>
-      <StyledClipPath className={`triangle-${index}`}>
-        <Typography
-          variant="h2"
-          className="titlePic"
-          onClick={() => openModal()}
-        >
+      <StyledClipPath onClick={openModal}>
+        <Typography variant="h2" className="titlePic">
           {name}
         </Typography>
         <img
           src={previewPic}
-          alt={`abrir sección de "${name}" desde la galería`}
+          alt={`Abrir sección de "${name}" desde la galería`}
           width={250}
           height={200}
-          onClick={() => openModal()}
         />
       </StyledClipPath>
       {isModalOpen && (

@@ -1,6 +1,6 @@
-import { styled, typographyClasses } from '@mui/material'
+import { Stack, styled, typographyClasses } from '@mui/material'
 
-export const StyledFooter = styled('footer')(
+export const StyledFooter = styled(Stack)(
   ({ theme: { palette, spacing } }) => ({
     [`& .${typographyClasses.root}`]: {
       color: palette.ceci,

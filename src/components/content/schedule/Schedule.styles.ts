@@ -1,56 +1,51 @@
-import { Stack, styled } from '@mui/material'
+import { Box, Stack, styled } from '@mui/material'
 
-export const AllDaysWrapper = styled(Stack)(({ theme: { breakpoints } }) => ({
-  flexDirection: 'column',
+export const GridContainer = styled('div')(
+  ({ theme: { breakpoints, spacing } }) => ({
+    display: 'grid',
+    gridTemplateColumns: '27% 73%',
+    gap: spacing(1),
+    rowGap: spacing(5),
+    margin: spacing(2, 0, 3, 0),
 
-  [breakpoints.up('sm')]: {
-    marginLeft: '30px',
-  },
-  [breakpoints.up(500)]: {
-    marginLeft: '60px',
-  },
-  [breakpoints.up(600)]: {
-    marginLeft: '95px',
-    fontSize: '16px',
-  },
-  [breakpoints.up('md')]: {
-    marginLeft: '20%',
-  },
-  [breakpoints.up('lg')]: {
-    marginLeft: '22%',
-  },
+    [breakpoints.up('sm')]: {
+      gap: spacing(2),
+      rowGap: spacing(5),
+    },
+
+    [breakpoints.up('md')]: {
+      gap: spacing(2),
+      rowGap: spacing(5),
+      gridTemplateColumns: '2fr 5fr',
+    },
+  })
+)
+
+export const DayColumn = styled(Stack)(({ theme: { palette, spacing } }) => ({
+  alignItems: 'flex-end',
+  justifyContent: 'center',
 }))
 
-export const RowWrapper = styled(Stack)(({ theme: { palette, spacing } }) => ({
-  flexDirection: 'row',
-  '&:not(:first-of-type)': {
-    marginTop: '30px',
-  },
+export const ClassColumn = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'rows',
+})<{ rows: number }>(({ rows, theme: { spacing } }) => ({
+  display: 'grid',
+  gridTemplateRows: `repeat(${rows}, auto)`,
 }))
 
-export const DayWrapper = styled('div')(({ theme: { palette, spacing } }) => ({
-  textAlign: 'right',
-  flexBasis: '30%',
-  alignSelf: 'center',
-}))
+export const ClassRow = styled(Stack)(
+  ({ theme: { breakpoints, spacing } }) => ({
+    flexDirection: 'row',
+    gap: spacing(1),
+    alignItems: 'center',
+    textAlign: 'start',
 
-export const DayCell = styled('div')(({ theme: { palette, spacing } }) => ({
-  margin: spacing(1, 0),
-}))
+    [breakpoints.up('sm')]: {
+      gap: spacing(2),
+    },
 
-export const HourWrapper = styled(Stack)(({ theme: { palette, spacing } }) => ({
-  justifyContent: 'space-between',
-  flexDirection: 'column',
-  padding: spacing(0, 2),
-  borderRight: `2px solid ${palette.aqua}`,
-}))
-
-export const ClassWrapper = styled(Stack)(
-  ({ theme: { palette, spacing } }) => ({
-    justifyContent: 'space-between',
-    flexDirection: 'column',
-    paddingLeft: spacing(2),
-    flexBasis: '70%',
-    textAlign: 'left',
+    [breakpoints.up('md')]: {
+      gap: spacing(4),
+    },
   })
 )

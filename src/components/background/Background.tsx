@@ -1,18 +1,12 @@
-import {
-  BackgroundWrapper,
-  Overlay,
-  StyledGradient,
-  StyledPic,
-} from './Background.styles'
+import { BackgroundWrapper, Overlay, StyledGradient } from './Background.styles'
 import { BackgroundPreview } from './BackgroundPreview'
 
 export const Background = (props) => {
-  const { previePics, setLoading } = props
+  const { previePics } = props
 
   return (
     <BackgroundWrapper>
       <StyledGradient />
-      {/* {isPicOn && <StyledPic />} */}
       {previePics && <BackgroundPreview />}
       <Overlay />
     </BackgroundWrapper>
