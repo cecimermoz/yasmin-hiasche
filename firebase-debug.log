@@ -1,0 +1,57 @@
+[debug] [2024-10-08T18:24:21.905Z] ----------------------------------------------------------------------
+[debug] [2024-10-08T18:24:21.906Z] Command:       /home/ceci/.nvm/versions/node/v18.14.1/bin/node /home/ceci/.nvm/versions/node/v18.14.1/bin/firebase hosting:channel:deploy preview_name
+[debug] [2024-10-08T18:24:21.907Z] CLI Version:   13.21.0
+[debug] [2024-10-08T18:24:21.907Z] Platform:      linux
+[debug] [2024-10-08T18:24:21.907Z] Node Version:  v18.14.1
+[debug] [2024-10-08T18:24:21.907Z] Time:          Tue Oct 08 2024 15:24:21 GMT-0300 (Argentina Standard Time)
+[debug] [2024-10-08T18:24:21.907Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-08T18:24:21.952Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-08T18:24:21.953Z] > authorizing via signed-in user (yhbellydance@gmail.com)
+[debug] [2024-10-08T18:24:21.953Z] [iam] checking project yasmin-hiasche-web for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-10-08T18:24:21.954Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:21.954Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:21.954Z] > refreshing access token with scopes: []
+[debug] [2024-10-08T18:24:21.955Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-08T18:24:21.955Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:22.112Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-08T18:24:22.112Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:22.112Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yasmin-hiasche-web:testIamPermissions [none]
+[debug] [2024-10-08T18:24:22.112Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yasmin-hiasche-web:testIamPermissions x-goog-quota-user=projects/yasmin-hiasche-web
+[debug] [2024-10-08T18:24:22.112Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yasmin-hiasche-web:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-10-08T18:24:23.147Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yasmin-hiasche-web:testIamPermissions 401
+[debug] [2024-10-08T18:24:23.148Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yasmin-hiasche-web:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2024-10-08T18:24:23.148Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
+[debug] [2024-10-08T18:24:23.148Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:23.148Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:23.148Z] > refreshing access token with scopes: []
+[debug] [2024-10-08T18:24:23.149Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-08T18:24:23.149Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:23.264Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-08T18:24:23.264Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:23.266Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-10-08T18:24:23.267Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:23.267Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:23.267Z] > refreshing access token with scopes: []
+[debug] [2024-10-08T18:24:23.267Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-08T18:24:23.268Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:23.375Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-08T18:24:23.375Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:23.377Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yasmin-hiasche-web [none]
+[debug] [2024-10-08T18:24:23.499Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yasmin-hiasche-web 401
+[debug] [2024-10-08T18:24:23.499Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yasmin-hiasche-web {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-10-08T18:24:23.499Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
+[debug] [2024-10-08T18:24:23.499Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:23.499Z] Checked if tokens are valid: false, expires at: 1676912212894
+[debug] [2024-10-08T18:24:23.499Z] > refreshing access token with scopes: []
+[debug] [2024-10-08T18:24:23.500Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-10-08T18:24:23.500Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:23.614Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-10-08T18:24:23.614Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-10-08T18:24:23.616Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-10-08T18:24:23.739Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (/home/ceci/.nvm/versions/node/v18.14.1/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/home/ceci/.nvm/versions/node/v18.14.1/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project yasmin-hiasche-web. Please make sure the project exists and your account has permission to access it.
