@@ -29,7 +29,7 @@ export const ImageGaleryContent = (props) => {
 
   return (
     <>
-      <StyledClipPath onClick={openModal}>
+      <StyledClipPath onClick={openModal} isEven={index % 2 !== 0}>
         <Typography variant="h2" className="titlePic">
           {name}
         </Typography>

@@ -6,6 +6,7 @@ import {
   StyledModal,
   StyledModalBody,
 } from './GaleryModal.styles'
+import { Box } from '@mui/material'
 
 export const GalleryModal = (props) => {
   const { closeModal, hasNext, hasPrev, findNext, findPrev, src } = props
@@ -22,7 +23,7 @@ export const GalleryModal = (props) => {
   }, [])
 
   return (
-    <div>
+    <Box id="galery-modal">
       <ModalOverlay onClick={closeModal} />
       <StyledModal>
         <StyledModalBody>
@@ -54,6 +55,6 @@ export const GalleryModal = (props) => {
           <img src={src} alt="imagen de la galeria" />
         </StyledModalBody>
       </StyledModal>
-    </div>
+    </Box>
   )
 }
